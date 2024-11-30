@@ -1,6 +1,6 @@
-# Love by Numbers - CS 109 Challenge Project
+# What are the Odds? - My CS 109 Challenge Project
 
-A statistical exploration of love stories, built with React. This project analyzes the HCMST (How Couples Meet and Stay Together) dataset to uncover patterns in how couples meet and form lasting relationships, with a special focus on my parents' love story.
+A statistical exploration of my parents' love story, built with React. This project analyzes the HCMST (How Couples Meet and Stay Together) dataset to uncover patterns in how couples meet and form lasting relationships, with a special focus on their story.
 
 ## Features
 
