@@ -7,6 +7,7 @@ import MeetingAge from './pages/MeetingAge';
 import BayesianAnalysis from './pages/BayesianAnalysis';
 import CLTAnalysis from './pages/CLTAnalysis';
 import RegressionAnalysis from './pages/RegressionAnalysis';
+import Conclusion from './pages/Conclusion';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 
 function AppRouter() {
@@ -21,6 +22,7 @@ function AppRouter() {
       <Route path="/bayesian" element={<BayesianAnalysis />} />
       <Route path="/clt" element={<CLTAnalysis />} />
       <Route path="/regression" element={<RegressionAnalysis />} />
+      <Route path="/conclusion" element={<Conclusion />} />
     </Routes>
   );
 }

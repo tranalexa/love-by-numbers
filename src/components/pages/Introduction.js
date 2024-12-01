@@ -2,6 +2,8 @@ import React from 'react';
 import { Typography, Container, Paper, Box } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { motion } from 'framer-motion';
+import DadNavy from '../../assets/images/Dad navy.jpeg';
+import MomPageant from '../../assets/images/Mom pageant.jpeg';
 
 function Introduction() {
   return (
@@ -26,6 +28,7 @@ function Introduction() {
                 type: "spring",
                 stiffness: 260,
                 damping: 20,
+                duration: 1
               }}
             >
               <FavoriteIcon sx={{ 
@@ -47,7 +50,7 @@ function Introduction() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}>
-                Love by Numbers
+                Love by the Numbers
               </Typography>
             </motion.div>
 
@@ -67,6 +70,16 @@ function Introduction() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
           >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px', paddingBottom: '40px' }}
+            >
+              <img src={DadNavy} alt="Dad in Navy" style={{ width: '35%', height: 'auto', objectFit: 'cover', borderRadius: '16px' }} />
+              <img src={MomPageant} alt="Mom in Pageant" style={{ width: '35%', height: 'auto', objectFit: 'cover', borderRadius: '16px' }} />
+            </motion.div>
+
             <Typography variant="body1" paragraph>
               It all began when a Navy doctor, working with my dad, came up with a clever plan: he'd introduce my dad to my mom—a pageant queen—if my dad agreed to set him up with a cousin in San Francisco. My dad, amused and curious, agreed, unknowingly setting the stage for a meeting that would change their lives.
             </Typography>
@@ -87,8 +100,8 @@ function Introduction() {
           >
             <Box sx={{ mt: 4, bgcolor: '#f5f5f5', p: 3, borderRadius: 2 }}>
               <Typography variant="body2" color="text.secondary">
-                This analysis uses data from the <a href="https://data.stanford.edu/hcmst" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>How Couples Meet and Stay Together (HCMST) dataset</a>,
-                combined with personal family history and statistical modeling techniques.
+                This project uses data from the <a href="https://data.stanford.edu/hcmst" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>How Couples Meet and Stay Together (HCMST) dataset</a>.
+                While based on real data, this analysis has limitations due to the nature of the dataset, including small sample sizes and potential biases. The goal is to celebrate love's beautiful improbability, not reduce it to numbers!
               </Typography>
             </Box>
           </motion.div>

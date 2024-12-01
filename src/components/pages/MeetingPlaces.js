@@ -3,6 +3,7 @@ import { Typography, Box, Paper, Container, Grid } from '@mui/material';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Formula } from '../MathContent';
 import { motion } from 'framer-motion';
+import BeachImage from '../../assets/images/Beach.jpeg';
 
 const meetingPlacesData = [
   { name: 'Church', probability: 5.83 },
@@ -35,12 +36,31 @@ function MeetingPlaces() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px', marginTop: '40px' }}
+          >
+            <img src={BeachImage} alt="Beach" style={{ width: '60%', height: 'auto', objectFit: 'cover', borderRadius: '12px' }} />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            <Typography variant="body2" display="block" align="center" gutterBottom>
+              My parents in Monterey, California
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
           >
             <Box sx={{ mb: 4 }}>
               <Formula 
                 math="P(\text{Church Meeting}) = \frac{N_{\text{Church Meetings}}}{N_{\text{Total Meetings}}} = 0.0583"
-                description="Probability of meeting at church"
+                description="Probability of meeting through church"
               />
             </Box>
           </motion.div>
@@ -51,7 +71,7 @@ function MeetingPlaces() {
             transition={{ delay: 0.7, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
-              According to the HCMST dataset, only 5.83% of couples met at church, making it a relatively rare meeting place compared to more common venues like bars and restaurants (19.79%). This makes my parents' meeting quite unique statistically.
+              According to the HCMST dataset, only 5.83% of couples met through church, making it a relatively rare meeting place compared to more common venues like bars and restaurants (19.79%). This makes my parents' meeting quite unique statistically.
             </Typography>
           </motion.div>
 
@@ -128,7 +148,7 @@ function MeetingPlaces() {
             transition={{ delay: 1.5, duration: 0.8 }}
           >
             <Typography variant="body1">
-              What makes their meeting even more remarkable is that it wasn't just a chance encounter at church—it was orchestrated through a mutual connection, adding another layer of probability to consider. The combination of meeting through both a mutual friend and at church represents an even rarer intersection of circumstances.
+              What makes their meeting even more remarkable is that it wasn't just a chance encounter through church—it was orchestrated through a mutual connection, adding another layer of probability to consider. The combination of meeting through both a mutual friend and through church represents an even rarer intersection of circumstances.
             </Typography>
           </motion.div>
         </motion.div>

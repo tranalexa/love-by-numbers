@@ -9,9 +9,10 @@ const sections = [
   { id: '/', label: 'Introduction' },
   { id: '/meeting-places', label: 'Meeting Places' },
   { id: '/church-marriage', label: 'Church & Marriage' },
-  { id: '/bayesian', label: 'Bayesian Analysis' },
   { id: '/clt', label: 'CLT Analysis' },
+  { id: '/bayesian', label: 'Bayesian Analysis' },
   { id: '/regression', label: 'Regression' },
+  { id: '/conclusion', label: 'Conclusion' },
 ];
 
 function Navigation() {

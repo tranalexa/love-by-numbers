@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import ageData from '../../processed_data.json';
 import 'katex/dist/katex.min.css';
 import { InlineMath } from 'react-katex';
+import DadDrink from '../../assets/images/Dad drink.jpeg';
+import MomDrink from '../../assets/images/Mom drink.jpeg';
 
 function CLTAndMeetingAge() {
   const meetingAgeData = [
@@ -33,6 +35,27 @@ function CLTAndMeetingAge() {
           >
             <Typography variant="h2" gutterBottom>
               Meeting Age and Central Limit Theorem Analysis
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '40px' }}
+          >
+            <img src={DadDrink} alt="Dad Drink" style={{ width: '45%', height: 'auto', objectFit: 'cover', borderRadius: '12px' }} />
+            <img src={MomDrink} alt="Mom Drink" style={{ width: '45%', height: 'auto', objectFit: 'cover', borderRadius: '12px' }} />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            style={{ marginTop: '20px' }}
+          >
+            <Typography variant="body2" display="block" align="center" gutterBottom sx={{ marginBottom: '30px' }}>
+              Date night at Planet Hollywood!
             </Typography>
           </motion.div>
 
@@ -182,7 +205,7 @@ function CLTAndMeetingAge() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.0, duration: 0.8 }}
-            style={{ paddingBottom: '20px' }}
+            style={{ paddingBottom: '5px' }}
           >
             <Typography variant="h5" gutterBottom>
               What This Means for My Parents

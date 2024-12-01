@@ -5,6 +5,7 @@ import 'katex/dist/katex.min.css';
 import { motion } from 'framer-motion';
 import './BayesianAnalysis.css';
 import { Formula, SmallFormula } from '../MathContent';
+import WeddingShoot from '../../assets/images/Wedding shoot.jpeg';
 
 function CustomFormula({ math, description }) {
   const formulaRef = React.useRef();
@@ -42,6 +43,25 @@ function BayesianAnalysis() {
           >
             <Typography variant="h2" gutterBottom>
               Bayesian Reasoning in Marriage Probability
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px', marginTop: '40px' }}
+          >
+            <img src={WeddingShoot} alt="Wedding Shoot" style={{ width: '60%', height: 'auto', objectFit: 'cover', borderRadius: '12px' }} />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            <Typography variant="body2" display="block" align="center" gutterBottom sx={{ marginBottom: '30px' }}>
+              My parents' wedding photoshoot at the Palace of Fine Arts in San Francisco
             </Typography>
           </motion.div>
 
