@@ -1,0 +1,27 @@
+.small-formula {
+  font-size: 1rem; /* Match the smallFormula component font size */
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  background-color: #F8FAFC;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.small-formula:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.small-formula .caption {
+  margin-top: 1em;
+  text-align: center;
+  color: #6B7280;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}

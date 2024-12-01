@@ -1,7 +1,30 @@
 import React from 'react';
 import { Typography, Box, Paper, Container } from '@mui/material';
-import { Formula } from '../MathContent';
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
 import { motion } from 'framer-motion';
+import './BayesianAnalysis.css';
+import { Formula, SmallFormula } from '../MathContent';
+
+function CustomFormula({ math, description }) {
+  const formulaRef = React.useRef();
+
+  React.useEffect(() => {
+    katex.render(math, formulaRef.current, {
+      throwOnError: false,
+      displayMode: true,
+    });
+  }, [math]);
+
+  return (
+    <div>
+      <div ref={formulaRef} className="small-formula" />
+      <Typography variant="body2" className="caption">
+        {description}
+      </Typography>
+    </div>
+  );
+}
 
 function BayesianAnalysis() {
   return (
@@ -25,7 +48,7 @@ function BayesianAnalysis() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
               To analyze the factors influencing eventual marriage in a relationship, I computed both conditional probabilities and Bayesian posterior probabilities based on the available data regarding age when couples met, church attendance, coworker introductions, and marital status. These two approaches provide insights into the probability of marriage under different conditions and how that might relate to my parents ending up married.
@@ -35,7 +58,7 @@ function BayesianAnalysis() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
           >
             <Typography variant="h5" gutterBottom>
               Prior Belief of Marriage Probability
@@ -54,14 +77,14 @@ function BayesianAnalysis() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.8 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
           >
             <Typography variant="h5" gutterBottom>
               Meeting Through Coworkers
             </Typography>
 
             <Typography variant="body1" component="div">
-              <strong>Conditional Probability (Data-derived):</strong> Based on the data, the probability of marriage given that the couple met as coworkers is 0.7399:
+              <strong>Conditional Probability (Data-derived):</strong> Based on the data, the probability of marriage given that the couple met through a coworker is 0.7399:
             </Typography>
 
             <Formula
@@ -74,7 +97,7 @@ function BayesianAnalysis() {
             </Typography>
 
             <Formula
-              math="P(\text{married} \mid \text{coworker}) = \frac{P(\text{coworker} \mid \text{married}) \cdot P(\text{married})}{P(\text{coworker})} = 0.7399"
+              math="P(\text{married} \mid \text{coworker}) = \frac{P(\text{coworker} \mid \text{married}) \cdot P(\text{married})}{P(\text{coworker})} = 0.7561"
               description="Bayesian posterior probability for coworker evidence"
             />
           </motion.div>
@@ -82,18 +105,18 @@ function BayesianAnalysis() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.8 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
           >
             <Typography variant="h5" gutterBottom>
               Adding Church Meeting Evidence
             </Typography>
 
             <Typography variant="body1" component="div">
-              <strong>Conditional Probability (Data-derived):</strong> When we consider both church and coworker meetings, the marriage probability increases to 0.9013:
+              <strong>Conditional Probability (Data-derived):</strong> When we consider both church and coworker meetings, the marriage probability increases to 0.8889:
             </Typography>
 
             <Formula
-              math="P(\text{married} \mid \text{church, coworker}) = \frac{N_{\text{married, church, coworker}}}{N_{\text{church, coworker}}} = 0.9013"
+              math="P(\text{married} \mid \text{church, coworker}) = \frac{N_{\text{married, church, coworker}}}{N_{\text{church, coworker}}} = 0.8889"
               description="Conditional probability for church and coworker meetings"
             />
 
@@ -101,27 +124,28 @@ function BayesianAnalysis() {
               <strong>Bayesian Posterior Probability:</strong> After incorporating church-related evidence into the Bayesian model:
             </Typography>
 
-            <Formula
+            <SmallFormula
               math="P(\text{married} \mid \text{church, coworker}) = \frac{P(\text{church} \mid \text{married, coworker}) \cdot P(\text{married} \mid \text{coworker})}{P(\text{church})} = 0.9013"
               description="Bayesian posterior probability including church evidence"
+              sx={{ fontSize: '0.75em' }}
             />
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.3, duration: 0.8 }}
+            transition={{ delay: 1.8, duration: 0.8 }}
           >
             <Typography variant="h5" gutterBottom>
               Adding Age Evidence (20-30 Range)
             </Typography>
 
             <Typography variant="body1" component="div">
-              <strong>Conditional Probability (Data-derived):</strong> When we add the age factor (20-30 range) to our previous conditions:
+              <strong>Conditional Probability (Data-derived):</strong> When we add the age factor (20-30 range) to our previous conditions, the conditional probability of marriage becomes 1.0.
             </Typography>
 
             <Formula
-              math="P(\text{married} \mid \text{20-30, church, coworker}) = \frac{N_{\text{married, 20-30, church, coworker}}}{N_{\text{20-30, church, coworker}}} = 0.9287"
+              math="P(\text{married} \mid \text{20-30, church, coworker}) = \frac{N_{\text{married, 20-30, church, coworker}}}{N_{\text{20-30, church, coworker}}} = 1.0"
               description="Conditional probability including age range"
             />
 
@@ -129,7 +153,7 @@ function BayesianAnalysis() {
               <strong>Bayesian Posterior Probability:</strong> The final Bayesian probability after incorporating all evidence:
             </Typography>
 
-            <Formula
+            <SmallFormula
               math="P(\text{married} \mid \text{20-30, church, coworker}) = \frac{P(\text{20-30} \mid \text{married, church, coworker}) \cdot P(\text{married} \mid \text{church, coworker})}{P(\text{20-30})} = 0.9287"
               description="Final Bayesian posterior probability"
             />
@@ -138,7 +162,7 @@ function BayesianAnalysis() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 0.8 }}
+            transition={{ delay: 2.1, duration: 0.8 }}
           >
             <Typography variant="h5" gutterBottom>
               Analysis of Results
@@ -149,26 +173,26 @@ function BayesianAnalysis() {
               <motion.ul
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.7, duration: 0.8 }}
+                transition={{ delay: 2.3, duration: 0.8 }}
               >
                 <motion.li
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.9, duration: 0.8 }}
+                  transition={{ delay: 2.5, duration: 0.8 }}
                 >
-                  Meeting through coworkers raises the probability to 0.7399
+                  Meeting through coworkers raises the probability to 0.7561
                 </motion.li>
                 <motion.li
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 2.1, duration: 0.8 }}
+                  transition={{ delay: 2.7, duration: 0.8 }}
                 >
                   Adding church meeting evidence increases it further to 0.9013
                 </motion.li>
                 <motion.li
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 2.3, duration: 0.8 }}
+                  transition={{ delay: 2.9, duration: 0.8 }}
                 >
                   When we consider the age range of 20-30, the probability reaches 0.9287
                 </motion.li>
@@ -179,18 +203,15 @@ function BayesianAnalysis() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.5, duration: 0.8 }}
+            transition={{ delay: 3.1, duration: 0.8 }}
           >
             <Typography variant="body1">
-              This analysis demonstrates how each additional piece of evidence strengthens our prediction of marriage probability, with the combination of workplace connection, religious community, and age compatibility being particularly strong indicators. The high final probability aligns well with my parents' actual outcome.
+              This analysis demonstrates how each additional piece of evidence strengthens our prediction of marriage probability, 
+              with the combination of workplace connection, religious community, and age compatibility being particularly strong indicators. 
+              The Bayesian updates aligned closely with the calculated 
+              conditional probabilities in the dataset, supporting the outcome of my parents' relationship and the fact that they ended up getting married.
             </Typography>
-
-            <Box sx={{ mt: 4, bgcolor: '#f5f5f5', p: 3, borderRadius: 2 }}>
-              <Typography variant="body2" color="text.secondary">
-                Analysis based on <a href="https://data.stanford.edu/hcmst" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>HCMST dataset</a> (2017-2022). Probabilities calculated using Bayesian inference and conditional probability methods.
-              </Typography>
-            </Box>
-          </motion.div>
+           </motion.div>
         </motion.div>
       </Paper>
     </Container>

@@ -3,6 +3,50 @@ import { Box, Typography } from '@mui/material';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
 
+export const SmallFormula = ({ math, description }) => (
+  <Box sx={{ 
+    my: 4,
+    px: 6,
+    py: 5,
+    bgcolor: '#F8FAFC',
+    borderRadius: '16px',
+    border: '1px solid rgba(0, 0, 0, 0.06)',
+    boxShadow: '0 4px 24px rgba(0, 0, 0, 0.03)',
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.05)',
+      transform: 'translateY(-2px)',
+    },
+  }}>
+    <Box sx={{
+      '& .katex': {
+        fontSize: '1.15rem',
+      },
+      '& .katex-display': {
+        margin: '0.5em 0',
+      },
+    }}>
+      <BlockMath math={math} />
+    </Box>
+    {description && (
+      <Typography 
+        variant="body2"
+        sx={{ 
+          mt: 3,
+          textAlign: 'center',
+          color: '#6B7280',
+          fontFamily: "'DM Sans', sans-serif",
+          fontSize: '0.95rem',
+          letterSpacing: '0.01em',
+          lineHeight: 1.6,
+        }}
+      >
+        {description}
+      </Typography>
+    )}
+  </Box>
+);
+
 export const Formula = ({ math, description }) => (
   <Box sx={{ 
     my: 4,
@@ -20,7 +64,7 @@ export const Formula = ({ math, description }) => (
   }}>
     <Box sx={{
       '& .katex': {
-        fontSize: '1.25rem',
+        fontSize: '1.5rem',
       },
       '& .katex-display': {
         margin: '0.5em 0',

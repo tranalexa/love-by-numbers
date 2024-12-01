@@ -9,7 +9,6 @@ const sections = [
   { id: '/', label: 'Introduction' },
   { id: '/meeting-places', label: 'Meeting Places' },
   { id: '/church-marriage', label: 'Church & Marriage' },
-  { id: '/meeting-age', label: 'Meeting Age' },
   { id: '/bayesian', label: 'Bayesian Analysis' },
   { id: '/clt', label: 'CLT Analysis' },
   { id: '/regression', label: 'Regression' },

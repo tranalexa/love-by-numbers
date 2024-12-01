@@ -37,7 +37,7 @@ function RegressionAnalysis() {
             transition={{ delay: 0.5, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
-              Can we predict if a couple will get married based on where they met and their age? Using logistic regression, I analyzed two key factors from the HCMST dataset: whether couples met at church (w1_q24_church) and their age when meeting (w1_age_when_met).
+              Can we predict if a couple will get married based on where they met and their age? Using logistic regression, I analyzed two key factors from the HCMST dataset: whether couples met through church and their age when meeting.
             </Typography>
           </motion.div>
 
@@ -47,7 +47,7 @@ function RegressionAnalysis() {
             transition={{ delay: 0.7, duration: 0.8 }}
           >
             <Formula
-              math="\text{logit}(p) = \beta_0 + \beta_1(\text{met at church}) + \beta_2(\text{standardized age})"
+              math="\text{logit}(p) = \beta_0 + \beta_1(\text{met through church}) + \beta_2(\text{standardized age})"
               description="Logistic regression model"
             />
           </motion.div>
@@ -78,7 +78,7 @@ function RegressionAnalysis() {
               transition={{ delay: 1.3, duration: 0.8 }}
             >
               <Typography variant="body1" component="div">
-                • β₁ (church) = {BETA_CHURCH.toFixed(4)}: Strong positive effect of meeting at church
+                • β₁ (church) = {BETA_CHURCH.toFixed(4)}: Strong positive effect of meeting through church
               </Typography>
             </motion.div>
             <motion.div
@@ -117,7 +117,7 @@ function RegressionAnalysis() {
             transition={{ delay: 2.1, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
-              The model shows that meeting at church has a significant positive effect on marriage probability (β₁ = {BETA_CHURCH.toFixed(4)}). 
+              The model shows that meeting through church has a significant positive effect on marriage probability (β₁ = {BETA_CHURCH.toFixed(4)}). 
               This suggests that couples who meet in religious settings have higher marriage probabilities, possibly due to shared values and community support.
             </Typography>
           </motion.div>
@@ -149,9 +149,9 @@ function RegressionAnalysis() {
             transition={{ delay: 2.7, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
-              My parents' story aligns remarkably well with these findings. They met at church, which our model identifies as a strong positive indicator for marriage (increasing odds by a factor of e^{BETA_CHURCH.toFixed(4)} ≈ {Math.exp(BETA_CHURCH).toFixed(2)}). 
-              My mom was also relatively young—around 20—when they met, which the model suggests is favorable for marriage probability. 
-              Their early relationship, built on shared values and family support, exemplifies how these statistical patterns play out in real life.
+              My parents' story aligns remarkably well with these findings. They met through church, which our model identifies as a strong positive indicator for marriage (increasing odds by a factor of e^{BETA_CHURCH.toFixed(4)} ≈ {Math.exp(BETA_CHURCH).toFixed(2)}), and my
+              mom, at around 20, was younger than the mean age of 24.3, which positively impacts the odds of marriage.
+              Their early relationship, built on shared values and family support, illustrates how these statistical patterns play out in real life.
             </Typography>
           </motion.div>
 
@@ -162,8 +162,7 @@ function RegressionAnalysis() {
           >
             <Box sx={{ mt: 2, p: 2, bgcolor: '#f3f4f6', borderRadius: 1 }}>
               <Typography variant="body2" color="text.secondary">
-                Implementation details: The model uses standardized age values and gradient descent optimization (1000 steps, learning rate 0.0001).
-                Probabilities are computed using a stabilized sigmoid function with value clipping at ±500 to prevent overflow.
+                View the implementation here: <a href="https://github.com/tranalexa/love-by-numbers/blob/main/scripts/regression.py" target="_blank" rel="noopener noreferrer" style={{ color: '#1a0dab' }}>GitHub</a>
               </Typography>
             </Box>
           </motion.div>

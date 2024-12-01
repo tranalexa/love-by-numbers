@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography, Box, Paper, Grid, Link } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, Cell, PieChart, Pie, Label } from 'recharts';
-import { Formula, InlineFormula, DistributionPlot, StatisticalNote } from './MathContent';
+import { Formula, smallFormula,InlineFormula, DistributionPlot, StatisticalNote } from './MathContent';
 import ageData from '../processed_data.json';
 import { AnimatePresence, motion } from 'framer-motion';
 

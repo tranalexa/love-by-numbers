@@ -29,7 +29,7 @@ function CLTAndMeetingAge() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
           >
             <Typography variant="h2" gutterBottom>
               Meeting Age and Central Limit Theorem Analysis
@@ -39,20 +39,26 @@ function CLTAndMeetingAge() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
               The expected age for meeting a future spouse was calculated as 24.32 years, basd on those who married, while the broader expected age for meeting any significant other is 26.65 years. The variance in meeting age is 139.99, with a standard deviation of 11.83 years.
             </Typography>
           </motion.div>
-          <Box sx={{ height: 500, my: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Typography variant="h6" gutterBottom align="center">
-              Ages When People Met
-            </Typography>
+          <Box sx={{ height: 470, my: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.3, duration: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              <Typography variant="h6" gutterBottom align="center">
+                Meeting Age: Frequency Distribution
+              </Typography>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 1 }}
             >
               <BarChart 
                 width={700}
@@ -66,7 +72,7 @@ function CLTAndMeetingAge() {
                   label={{ 
                     value: 'Age When Met', 
                     position: 'insideBottom',
-                    offset: -10
+                    offset: -15
                   }}
                   tickFormatter={(value) => Math.round(value)}
                   domain={['dataMin', 'dataMax']}
@@ -74,7 +80,7 @@ function CLTAndMeetingAge() {
                   dy={10}
                 />
                 <YAxis 
-                  label={{ value: 'Frequency', angle: -90, position: 'insideLeft' }}
+                  label={{ value: 'Frequency', angle: -90, position: 'insideLeft', dx: -10, dy: 50 }}
                 />
                 <Tooltip 
                   formatter={(value, name) => [`${value} couples`, 'Frequency']}
@@ -87,7 +93,7 @@ function CLTAndMeetingAge() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
               For my mom's age at the time of meeting my dad (20 years old), we calculate the z-score: 
@@ -100,16 +106,16 @@ function CLTAndMeetingAge() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
+            transition={{ delay: 1, duration: 0.8 }}
           >
-            <Box sx={{ height: 500, my: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Box sx={{ height: 470, my: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <Typography variant="h6" gutterBottom align="center">
                 Distribution of Sample Means (Central Limit Theorem)
               </Typography>
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.9, duration: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 1 }}
               >
                 <BarChart 
                   width={700}
@@ -131,13 +137,13 @@ function CLTAndMeetingAge() {
                     dy={10}
                   />
                   <YAxis 
-                    label={{ value: 'Frequency', angle: -90, position: 'insideLeft' }}
+                    label={{ value: 'Frequency', angle: -90, position: 'insideLeft', dx: -10, dy: 50 }}
                   />
                   <Tooltip 
                     formatter={(value, name) => [`${value} samples`, 'Frequency']}
                     labelFormatter={(label) => `Mean: ${Math.round(Number(label))}`}
                   />
-                  <Bar dataKey="frequency" fill="#8884d8" />
+                  <Bar dataKey="frequency" fill="#82ca9d" />
                 </BarChart>
               </motion.div>
             </Box>
@@ -146,17 +152,18 @@ function CLTAndMeetingAge() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ delay: 1.4, duration: 0.8 }}
+            style={{ marginTop: '0px', paddingBottom: '0px' }}
           >
             <Typography variant="body1" paragraph>
-              The data shows that the average meeting age is 24.3 years (σ = 11.8). My mom was 20 when she met my dad, placing her in the 28.7th percentile - somewhat earlier than typical, but not unusually so.
+              I noticed the age when couples met is right-skewed, with many meeting in their early 20s. To explore this, I used the Central Limit Theorem (CLT), sampling 50 couples 1,000 times and calculating the mean age of each sample. As expected, the means formed a normal distribution, illustrating the CLT.
             </Typography>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.1, duration: 0.8 }}
+            transition={{ delay: 1.6, duration: 0.8 }}
           >
           
           </motion.div>
@@ -164,41 +171,18 @@ function CLTAndMeetingAge() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 0.8 }}
+            transition={{ delay: 1.8, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
-              The original distribution of ages is right-skewed, showing that younger couples are more common in the dataset. Most couples meet in their early 20s, with fewer meetings happening later in life.
+              From my CLT analysis, I found the mean age at which couples met across the samples to be 26.63 years, with a standard deviation of 1.71 years. The 95% confidence interval for the mean is [26.52, 26.74], providing a range which the true mean age is likely to fall.
             </Typography>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.7, duration: 0.8 }}
-          >
-            <Typography variant="h6" gutterBottom align="center">
-              Meeting Age: Mean and Variance
-            </Typography>
-            <Typography variant="body1" paragraph>
-              The age distribution analysis further applies the CLT to understand the typical age ranges for meeting significant others. Here's the mathematical framework:
-            </Typography>
-            <Box sx={{ mb: 4 }}>
-              <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={meetingAgeData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="age" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="probability" stroke="#82ca9d" />
-                </LineChart>
-              </ResponsiveContainer>
-            </Box>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 0.8 }}
+            transition={{ delay: 2.0, duration: 0.8 }}
+            style={{ paddingBottom: '20px' }}
           >
             <Typography variant="h5" gutterBottom>
               What This Means for My Parents
@@ -213,20 +197,7 @@ function CLTAndMeetingAge() {
             <Typography variant="body1">
               My parents' story fits within these broader trends. Meeting at 20, my mom was on the younger side of the distribution, joining the majority of couples who connected in their early twenties. While their timing was somewhat early, it wasn't unusual - and perhaps contributed to their enduring connection.
             </Typography>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.4, duration: 0.8 }}
-          >
-            <Box sx={{ mt: 4, bgcolor: '#f5f5f5', p: 3, borderRadius: 2 }}>
-              <Typography variant="body2" color="text.secondary">
-                Analysis based on <a href="https://data.stanford.edu/hcmst" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>HCMST dataset</a> (2017-2022) with n=1000 sample size.
-                All values rounded to three decimal places for clarity.
-              </Typography>
-            </Box>
-          </motion.div>
+          </motion.div>          
         </motion.div>
       </Paper>
     </Container>
