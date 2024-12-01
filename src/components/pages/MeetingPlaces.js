@@ -98,6 +98,7 @@ function MeetingPlaces() {
                   textAnchor="end"
                   height={60}
                   interval={0}
+                  tick={{ fontSize: 10 }}
                 />
                 <YAxis
                   label={{ 
