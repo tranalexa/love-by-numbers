@@ -5,4 +5,4 @@ A statistical exploration of my parents' love story, built with React. This proj
 Built with the help of Windsurf
 
 ## Credits
-- [HCMST Dataset: Stanford University][https://data.stanford.edu/hcmst]
+- HCMST Dataset from Stanford University: https://data.stanford.edu/hcmst
