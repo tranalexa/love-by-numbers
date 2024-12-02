@@ -1,5 +1,6 @@
 import React from 'react';
-import { Typography, Box, Paper, Container, Grid } from '@mui/material';
+import { Typography, Box, Paper, Container } from '@mui/material';
+// import Grid from '@mui/material/Grid';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Formula } from '../MathContent';
 import { motion } from 'framer-motion';

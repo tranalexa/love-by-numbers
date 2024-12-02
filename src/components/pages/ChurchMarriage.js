@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Container, Paper, Box, Grid } from '@mui/material';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Label } from 'recharts';
+import { PieChart, Pie, ResponsiveContainer, Tooltip, Label } from 'recharts';
+// import { Cell } from 'recharts';
 import { Formula } from '../MathContent';
 import { motion } from 'framer-motion';
 import WeddingCakeImage from '../../assets/images/Wedding cake.jpeg';

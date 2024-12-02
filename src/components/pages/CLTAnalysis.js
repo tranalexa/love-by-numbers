@@ -1,24 +1,24 @@
 import React from 'react';
 import { Typography, Container, Paper, Box } from '@mui/material';
 import { Formula } from '../MathContent';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, LineChart, Line, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import { motion } from 'framer-motion';
 import ageData from '../../processed_data.json';
 import 'katex/dist/katex.min.css';
-import { InlineMath } from 'react-katex';
+// import { InlineMath } from 'react-katex';
 import DadDrink from '../../assets/images/Dad drink.jpeg';
 import MomDrink from '../../assets/images/Mom drink.jpeg';
 
 function CLTAndMeetingAge() {
-  const meetingAgeData = [
-    { age: 18, probability: 0.02 },
-    { age: 20, probability: 0.05 },
-    { age: 22, probability: 0.08 },
-    { age: 24, probability: 0.10 },
-    { age: 26, probability: 0.09 },
-    { age: 28, probability: 0.07 },
-    { age: 30, probability: 0.05 },
-  ];
+  // const meetingAgeData = [
+  //   { age: 18, probability: 0.02 },
+  //   { age: 20, probability: 0.05 },
+  //   { age: 22, probability: 0.08 },
+  //   { age: 24, probability: 0.10 },
+  //   { age: 26, probability: 0.09 },
+  //   { age: 28, probability: 0.07 },
+  //   { age: 30, probability: 0.05 },
+  // ];
 
   return (
     <Container maxWidth="lg" sx={{ mt: 10 }}>

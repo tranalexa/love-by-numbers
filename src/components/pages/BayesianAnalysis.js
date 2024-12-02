@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box, Paper, Container } from '@mui/material';
+import { Typography, Paper, Container } from '@mui/material';
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
 import { motion } from 'framer-motion';
@@ -7,25 +7,25 @@ import './BayesianAnalysis.css';
 import { Formula, SmallFormula } from '../MathContent';
 import WeddingShoot from '../../assets/images/Wedding shoot.jpeg';
 
-function CustomFormula({ math, description }) {
-  const formulaRef = React.useRef();
+// function CustomFormula({ math, description }) {
+//   const formulaRef = React.useRef();
 
-  React.useEffect(() => {
-    katex.render(math, formulaRef.current, {
-      throwOnError: false,
-      displayMode: true,
-    });
-  }, [math]);
+//   React.useEffect(() => {
+//     katex.render(math, formulaRef.current, {
+//       throwOnError: false,
+//       displayMode: true,
+//     });
+//   }, [math]);
 
-  return (
-    <div>
-      <div ref={formulaRef} className="small-formula" />
-      <Typography variant="body2" className="caption">
-        {description}
-      </Typography>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <div ref={formulaRef} className="small-formula" />
+//       <Typography variant="body2" className="caption">
+//         {description}
+//       </Typography>
+//     </div>
+//   );
+// }
 
 function BayesianAnalysis() {
   return (
