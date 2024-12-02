@@ -65,7 +65,7 @@ function CLTAndMeetingAge() {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
-              The expected age for meeting a future spouse was calculated as 24.32 years, basd on those who married, while the broader expected age for meeting any significant other is 26.65 years. The variance in meeting age is 139.99, with a standard deviation of 11.83 years.
+              The expected age for meeting a future spouse was calculated as 24.32 years, based on those who married, while the broader expected age for meeting any significant other is 26.65 years. The variance in meeting age is 139.99, with a standard deviation of 11.83 years.
             </Typography>
           </motion.div>
           <Box sx={{ height: 470, my: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
