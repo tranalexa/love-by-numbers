@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Paper, Container } from '@mui/material';
-import katex from 'katex';
+// import katex from 'katex';
 import 'katex/dist/katex.min.css';
 import { motion } from 'framer-motion';
 import './BayesianAnalysis.css';
