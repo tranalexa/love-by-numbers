@@ -101,7 +101,7 @@ function Introduction() {
             <Box sx={{ mt: 4, bgcolor: '#f5f5f5', p: 3, borderRadius: 2 }}>
               <Typography variant="body2" color="text.secondary">
                 This project uses data from the <a href="https://data.stanford.edu/hcmst" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>How Couples Meet and Stay Together (HCMST) dataset</a>.
-                While based on real data, this analysis has limitations due to the nature of the dataset, including small sample sizes and potential biases. The goal is to celebrate love's beautiful improbability, not reduce it to numbers!
+                While based on real data, this analysis has limitations due to the nature of the dataset. The goal is to celebrate love's beautiful improbability, not reduce it to numbers!
               </Typography>
             </Box>
           </motion.div>

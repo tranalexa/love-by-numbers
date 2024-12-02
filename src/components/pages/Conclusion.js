@@ -28,7 +28,7 @@ function Conclusion() {
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <Typography variant="body1" paragraph>
-              Although analyzing my parents' relationship through probability shows that factors like shared spaces and people matter in the union of a couple, there's more to their story than the numbers. From a Navy doctor's introduction to a parental church connection, their bond highlights how chance events can create lasting relationships. While data shows patterns, their story reminds us that love is shaped by serendipity and timing.
+              Although analyzing my parents' relationship through probability shows that factors like shared spaces and people matter in the union of a couple, there's more to their story than the numbers. From a Navy doctor's introduction to a parental church connection, their bond highlights how chance events can create lasting relationships. While data shows patterns, their story reminds me that love is shaped by serendipity and timing.
             </Typography>
           </motion.div>
 
