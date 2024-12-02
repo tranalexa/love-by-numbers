@@ -12,7 +12,7 @@ A statistical exploration of my parents' love story, built with React. This proj
 - **Routing**: React Router
 
 ## Hosted on: 
-[lovebythenumbers.tech]
+[lovebythenumbers.tech][lovebythenumbers.tech]
 
 ## Credits
 
